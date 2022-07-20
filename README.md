@@ -63,7 +63,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You need have installed firebase-tools with the command `npm install -g firebase-tools`
+After that login with firebase with the email account that you use to the project `firebase login`
+Then init your firebase project `firebase init`
+Next step create your build to deploy with `npm run build`
+Finally to deploy use the command `firebase deploy`
 
 ### `npm run build` fails to minify
 
