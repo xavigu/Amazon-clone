@@ -7,8 +7,6 @@ function Product({id, title = 'Main title', image = cardImage, price = 50, ratin
   // array with the state of the store and dispatch to manipulate the data
   const [{ basket }, dispatch] = useStateValue();
 
-  console.log('basket value: ', basket)
-
   const addToBasket = () => {
     // dispatch the item into the data layer
     dispatch({
