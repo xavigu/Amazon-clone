@@ -69,6 +69,6 @@ Then init your firebase project `firebase init`
 Next step create your build to deploy with `npm run build`
 Finally to deploy use the command `firebase deploy`
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### How to use stripe payment
+- You need to install the dependencies `npm i @stripe/stripe-js` and `npm i @stripe/react-stripe-js`
+- Create account in stripe.com to have API keys
