@@ -72,3 +72,6 @@ Finally to deploy use the command `firebase deploy`
 ### How to use stripe payment
 - You need to install the dependencies `npm i @stripe/stripe-js` and `npm i @stripe/react-stripe-js`
 - Create account in stripe.com to have API keys
+
+### Backend side
+Para emular la parte del servidor express se lanza el comando `firebase emulators:start` posicionado en la carpeta functions
