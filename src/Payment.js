@@ -7,6 +7,7 @@ import './Payment.css'
 import { useStateValue } from './StateProvider';
 import CheckoutProduct from './CheckoutProduct';
 import { getBasketTotal } from './reducer';
+import { db } from './firebase';
 
 
 function Payment() {
@@ -39,6 +40,7 @@ function Payment() {
     getClientSecret();
   }, [basket])
   
+  console.log('🧔 ', user);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,11 +51,28 @@ function Payment() {
       payment_method: {
         card: elements.getElement(CardElement)
       }
-    }).then(({ paymentIntent }) => {
+    }).then(({ paymentIntent }) => {     
       // paymentIntent = payment confirmation
+      console.log('payment confirmation: ', paymentIntent);
+      // set the order into the database
+      db
+        .collection('users')
+        .doc(user?.uid)
+        .collection('orders')
+        .doc(paymentIntent.id)
+        .set({
+          basket: basket,
+          amount: paymentIntent.amount,
+          created: paymentIntent.created
+        })
+
       setSucceeded(true);
       setError(null);
       setProcessing(false);
+
+      dispatch({
+        type: 'EMPTY_BASKET'
+      })
 
       navigate('/orders');
     })
