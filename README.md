@@ -69,6 +69,8 @@ Then init your firebase project `firebase init`
 Next step create your build to deploy with `npm run build`
 Finally to deploy use the command `firebase deploy`
 
+Note: Correo xavi4191@gmail.com de Firebase
+
 ### How to use stripe payment
 - You need to install the dependencies `npm i @stripe/stripe-js` and `npm i @stripe/react-stripe-js`
 - Create account in stripe.com to have API keys
